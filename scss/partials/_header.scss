@@ -32,3 +32,21 @@ header {
 	}
 
 }
+
+@media all and (max-width: 400px) {
+
+	header {
+
+		img {
+			height: 20px;
+		}
+
+		a.app-cta {
+			padding: 0 10px;
+			height: 30px;
+			font-size: 12px;
+		}
+
+	}
+
+}
