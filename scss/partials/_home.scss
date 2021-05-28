@@ -90,9 +90,9 @@
 
 		.assets {
 
-			width: 100%;
-			max-width: 100%;
-			justify-content: center;
+			display: block;
+			margin: 0 auto;
+			width: fit-content;
 
 			img {
 				max-width: 350px;
