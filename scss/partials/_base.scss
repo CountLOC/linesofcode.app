@@ -33,3 +33,9 @@ img {
 [aria-hidden] {
 	display: none !important;
 }
+
+.max-width {
+	width: 95%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
