@@ -1,0 +1,23 @@
+# base ignores
+.*
+~*
+*~
+
+# package distubution ignores
+node_modules/
+
+# test file ignores
+*.mp4
+
+# app file ignores
+*.js
+*.css
+*.html
+*.map
+
+# allowing test files
+!cypress/**/*
+
+# ignoring git/github files
+!.gitignore
+!.github
