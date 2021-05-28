@@ -10,10 +10,7 @@ if (!isset($_SERVER['REQUEST_URI']) || empty($_SERVER['REQUEST_URI'])) {
 	}
 }
 
-if ($page_path === 'view/pages/app.php') {
-	require_once 'view/includes/head.php';
-	require_once $page_path;
-} else if (\file_exists($page_path)) {
+if (\file_exists($page_path)) {
 	require_once 'view/includes/head.php';
 	require_once 'view/includes/header-content.php';
 	require_once $page_path;
