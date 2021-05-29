@@ -45,8 +45,7 @@ header {
 		align-items: center;
 		justify-content: space-between;
 
-		&::before, &::after {
-			content: "";
+		&::before, &::after, .middle {
 			display: inline-block;
 			height: var(--ball-size);
 			width: var(--ball-size);
@@ -57,18 +56,26 @@ header {
 			background-color: var(--bg-color);
 		}
 
-		&::after {
+		&::after, .middle {
 			border: 2px solid var(--bg-color);
 			background-color: #F0F4F8;
+			transition: 200ms all;
 		}
 
-		.middle {
-			display: inline-block;
-			height: var(--ball-size);
-			width: var(--ball-size);
-			border-radius: var(--ball-size);
-			border: 2px solid var(--bg-color);
-			background-color: #F0F4F8;
+		&[data-step="2"] {
+
+			.middle {
+				background-color: var(--bg-color);
+			}
+
+		}
+
+		&[data-step="3"] {
+
+			&::after, .middle {
+				background-color: var(--bg-color);
+			}
+
 		}
 
 	}
