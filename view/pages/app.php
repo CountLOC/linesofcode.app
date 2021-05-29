@@ -3,12 +3,14 @@
 	<section class="content" data-page="1">
 		
 		<div class="words">
-			<h1>Step 1</h1>
+			<h1 style="margin-bottom: 5px;">Step 1</h1>
 			<p>Input your Github URL into the box below!</p>
-<!-- 			<div class="cta-wrap">
-				<a href="/app" title="Go to the app" class="button red">Try it now</a>
-				<a href="/data-handling" title="Our data handling promise to you" class="button blue">Our data handling promise</a>
-			</div> -->
+			<div class="cta-wrap column">
+				<label>Git URL
+					<input type="url" id="gitUrl" placeholder="https://github.com/CountLOC/linesofcode.app" required>
+				</label>
+				<button type="button">Count Lines of Code</button>
+			</div>
 		</div>
 
 		<div class="assets">

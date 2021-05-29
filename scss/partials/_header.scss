@@ -31,6 +31,48 @@ header {
 
 	}
 
+	#progressBar {
+
+		--ball-size: 10px;
+		--bg-color: #0E7C86;
+		--total-length: 100px;
+
+		width: 100px;
+		height: 2px;
+		background-color: var(--bg-color);
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+
+		&::before, &::after {
+			content: "";
+			display: inline-block;
+			height: var(--ball-size);
+			width: var(--ball-size);
+			border-radius: var(--ball-size);
+		}
+
+		&::before {
+			background-color: var(--bg-color);
+		}
+
+		&::after {
+			border: 2px solid var(--bg-color);
+			background-color: #F0F4F8;
+		}
+
+		.middle {
+			display: inline-block;
+			height: var(--ball-size);
+			width: var(--ball-size);
+			border-radius: var(--ball-size);
+			border: 2px solid var(--bg-color);
+			background-color: #F0F4F8;
+		}
+
+	}
+
 }
 
 @media all and (max-width: 400px) {
