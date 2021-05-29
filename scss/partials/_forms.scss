@@ -1,4 +1,38 @@
 label {
+
 	display: flex;
 	flex-flow: column nowrap;
+	width: 95%;
+	max-width: 400px;
+	font-size: 16px;
+	color: #243B53;
+	margin-bottom: 20px;
+
+	input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+		margin-top: 5px;
+		width: 100%;
+	}
+
+}
+
+button[type=submit], input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+	height: 40px;
+	max-width: 400px;
+	width: 95%;
+	border-radius: 4px;
+}
+
+input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+	font-size: 16px;
+	text-indent: 15px;
+	background-color: #D9E2EC;
+	color: #102A43;
+}
+
+button[type=submit] {
+	background-color: #B44D12;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #D9E2EC;
+	font-weight: 500;
 }

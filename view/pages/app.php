@@ -9,7 +9,7 @@
 				<label>Git URL
 					<input type="url" id="gitUrl" placeholder="https://github.com/CountLOC/linesofcode.app" required>
 				</label>
-				<button type="button">Count Lines of Code</button>
+				<button type="submit">Count Lines of Code</button>
 			</div>
 		</div>
 
