@@ -1,0 +1,3 @@
+interface InteractiveComponentInterface {
+	init(): void;
+}

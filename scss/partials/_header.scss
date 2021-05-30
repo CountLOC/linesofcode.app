@@ -31,6 +31,80 @@ header {
 
 	}
 
+	#progressBar {
+
+		--ball-size: 10px;
+		--bg-color: #0E7C86;
+		--total-length: 100px;
+
+		width: 100px;
+		height: 2px;
+		background-color: var(--bg-color);
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+
+		.bar-overlay {
+			position: absolute;
+			left: var(--ball-size);
+			background-color: #F0F4F8;
+			opacity: .6;
+			width: calc(var(--total-length) - calc(var(--ball-size) * 2));
+			height: 2px;
+			transition: 150ms all;
+		}
+
+		&::before, &::after, .middle {
+			display: inline-block;
+			height: var(--ball-size);
+			width: var(--ball-size);
+			border-radius: var(--ball-size);
+		}
+
+		&::before {
+			background-color: var(--bg-color);
+		}
+
+		&::after, .middle {
+			border: 2px solid var(--bg-color);
+			background-color: #F0F4F8;
+			transition: 200ms all;
+		}
+
+		.middle {
+			z-index: 2;
+		}
+
+		&[data-step="2"] {
+
+			.bar-overlay {
+				// this calc is the calculated length of the bar in between the balls
+				width: calc(calc(var(--total-length) - calc(var(--ball-size) * 3)) / 2);
+				left: calc(calc(calc(var(--total-length) - calc(var(--ball-size) * 3)) / 2) + calc(var(--ball-size) * 2));
+			}
+
+			.middle {
+				background-color: var(--bg-color);
+			}
+
+		}
+
+		&[data-step="3"] {
+
+			.bar-overlay {
+				width: 0px;
+			}
+
+			&::after, .middle {
+				background-color: var(--bg-color);
+			}
+
+		}
+
+	}
+
 }
 
 @media all and (max-width: 400px) {
