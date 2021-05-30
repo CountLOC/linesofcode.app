@@ -49,11 +49,12 @@ button {
 	&.loading {
 		pointer-events: none;
 		cursor: not-allowed;
-		opacity: .3;
+		opacity: .5;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 25px;
+		background-size: 35px;
 		background-image: url(/assets/load-dots.svg);
+		color: transparent !important;
 	}
 
 }
