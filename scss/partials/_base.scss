@@ -41,9 +41,21 @@ a, button {
 }
 
 button {
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	&.loading {
+		pointer-events: none;
+		cursor: not-allowed;
+		opacity: .3;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 25px;
+		background-image: url(/assets/load-dots.svg);
+	}
+
 }
 
 img {
