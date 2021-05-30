@@ -44,6 +44,17 @@ header {
 		flex-flow: row nowrap;
 		align-items: center;
 		justify-content: space-between;
+		position: relative;
+
+		.bar-overlay {
+			position: absolute;
+			left: var(--ball-size);
+			background-color: #F0F4F8;
+			opacity: .6;
+			width: calc(var(--total-length) - calc(var(--ball-size) * 2));
+			height: 2px;
+			transition: 150ms all;
+		}
 
 		&::before, &::after, .middle {
 			display: inline-block;
@@ -64,6 +75,12 @@ header {
 
 		&[data-step="2"] {
 
+			.bar-overlay {
+				// this calc is the calculated length of the bar in between the balls
+				width: calc(calc(var(--total-length) - calc(var(--ball-size) * 3)) / 2);
+				left: calc(calc(calc(var(--total-length) - calc(var(--ball-size) * 3)) / 2) + calc(var(--ball-size) * 2));
+			}
+
 			.middle {
 				background-color: var(--bg-color);
 			}
@@ -71,6 +88,10 @@ header {
 		}
 
 		&[data-step="3"] {
+
+			.bar-overlay {
+				width: 0px;
+			}
 
 			&::after, .middle {
 				background-color: var(--bg-color);
