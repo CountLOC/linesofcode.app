@@ -7,7 +7,7 @@
 			<p>Input your Github URL into the box below!</p>
 			<form class="cta-wrap column">
 				<label>Git URL
-					<input type="url" id="gitUrl" placeholder="https://github.com/CountLOC/linesofcode.app" required>
+					<input type="url" id="gitUrl" placeholder="https://github.com/CountLOC/linesofcode.app" pattern="^https:\/\/github\.com\/.*" required>
 				</label>
 				<button type="submit">Count Lines of Code</button>
 			</form>
