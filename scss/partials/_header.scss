@@ -73,6 +73,10 @@ header {
 			transition: 200ms all;
 		}
 
+		.middle {
+			z-index: 2;
+		}
+
 		&[data-step="2"] {
 
 			.bar-overlay {

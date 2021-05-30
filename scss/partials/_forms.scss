@@ -23,7 +23,7 @@ button[type=submit], input:not([type=checkbox]):not([type=radio]):not([type=file
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=file]) {
-	
+
 	font-size: 16px;
 	text-indent: 15px;
 	background-color: #D9E2EC;
@@ -72,11 +72,18 @@ input:not([type=checkbox]):not([type=radio]):not([type=file]) {
 }
 
 button[type=submit] {
+
 	background-color: #B44D12;
 	text-transform: uppercase;
 	font-size: 16px;
 	color: #D9E2EC;
 	font-weight: 500;
+	transition: 100ms all;
+
+	&:active {
+		background-color: #8D2B0B;
+	}
+
 }
 
 form {
