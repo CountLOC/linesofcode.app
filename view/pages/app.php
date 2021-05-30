@@ -5,12 +5,12 @@
 		<div class="words">
 			<h1 style="margin-bottom: 5px;">Step 1</h1>
 			<p>Input your Github URL into the box below!</p>
-			<div class="cta-wrap column">
+			<form class="cta-wrap column">
 				<label>Git URL
 					<input type="url" id="gitUrl" placeholder="https://github.com/CountLOC/linesofcode.app" required>
 				</label>
 				<button type="submit">Count Lines of Code</button>
-			</div>
+			</form>
 		</div>
 
 		<div class="assets">
