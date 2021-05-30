@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "target": "es5",
+        "outFile": "../js/app.js",
+        "alwaysStrict": true
+    },
+    "files": [
+        "View/InteractiveComponentInterface.ts",
+        "View/App/Form/GitURLForm.ts",
+		"index.ts"
+    ]
+}

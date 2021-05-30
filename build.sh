@@ -4,7 +4,7 @@
 npm install
 mkdir css
 node_modules/.bin/node-sass --output-style compressed scss/style.scss > css/style.css
-# node_modules/.bin/tsc -p scripts/
+node_modules/.bin/tsc -p scripts/
 
 # build php pages
 for f in `find view/pages -name '*.php'`
