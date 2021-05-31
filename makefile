@@ -1,4 +1,4 @@
-develop:
+all:
 	npm install
 	@tsc -w -p scripts/ &
 	@sass --watch scss/style.scss:css/style.css --style compressed &
