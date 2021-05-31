@@ -95,6 +95,7 @@ header {
 
 			.bar-overlay {
 				width: 0px;
+				left: calc(var(--total-length) - var(--ball-size));
 			}
 
 			&::after, .middle {
