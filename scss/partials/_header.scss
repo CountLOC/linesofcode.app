@@ -36,7 +36,9 @@ header {
 		--ball-size: 10px;
 		--bg-color: #0E7C86;
 		--total-length: 100px;
-		--bar-length: calc(calc(var(--total-length) - calc(var(--ball-size) * 3)) / 2);
+		--number-of-steps: 3;
+		--number-of-bars: 2;
+		--bar-length: calc(calc(var(--total-length) - calc(var(--ball-size) * var(--number-of-steps))) / var(--number-of-bars));
 
 		width: 100px;
 		height: 2px;
@@ -52,7 +54,7 @@ header {
 			left: var(--ball-size);
 			background-color: #F0F4F8;
 			opacity: .6;
-			width: calc(var(--total-length) - calc(var(--ball-size) * 2));
+			width: calc(var(--total-length) - calc(var(--ball-size) * var(--number-of-bars)));
 			height: 2px;
 			transition: 150ms all;
 		}
@@ -81,9 +83,8 @@ header {
 		&[data-step="2"] {
 
 			.bar-overlay {
-				// this calc is the calculated length of the bar in between the balls
 				width: var(--bar-length);
-				left: calc(var(--bar-length) + calc(var(--ball-size) * 2));
+				left: calc(var(--bar-length) + calc(var(--ball-size) * var(--number-of-bars)));
 			}
 
 			.middle {
