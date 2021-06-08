@@ -11,6 +11,7 @@ node_modules/
 *.css
 *.html
 *.map
+*.private
 
 # allowing test files
 !cypress/**/*

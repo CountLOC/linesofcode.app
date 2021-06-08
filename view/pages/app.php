@@ -19,6 +19,20 @@
 
 	</section>
 
+	<section class="content" data-page="2">
+
+		<div class="words">
+			<h1 style="margin-bottom: 5px;">Step 2</h1>
+			<p>Give CountLOC access to your GitHub repository</p>
+			<a href="https://github.com/login/oauth/authorize?client_id=c01abc2b579fbf2b6632&redirect_uri=http://localhost:9500/app&scope=repo">Login With Github</a>
+		</div>
+
+		<div class="assets">
+			<img src="/assets/illustrations/auth.svg" alt="An image of two cpus and a phone with a pad lock between them" title="Authenticate with GitHub">
+		</div>
+
+	</section>
+
 </main>
 
 <script src="/js/app.js"></script>
