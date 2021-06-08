@@ -43,7 +43,6 @@
 
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		width: 100%;
 
 		&.column {
@@ -68,6 +67,10 @@
 
 			&.blue {
 				background-color: #003E6B;
+			}
+
+			&:not(:last-child) {
+				margin-right: 20px;
 			}
 
 		}
@@ -133,6 +136,11 @@
 				max-width: 350px;
 				margin-bottom: 10px;
 				font-size: 14px;
+
+				&:not(:last-child) {
+					margin-right: 0px;
+				}
+
 			}
 
 		}
