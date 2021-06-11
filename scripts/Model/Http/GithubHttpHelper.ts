@@ -1,5 +1,31 @@
 class GithubHttpHelper {
 
+	private apiBase:string;
+
+	constructor() {
+		this.apiBase = "https://api.github.com"
+	}
+
+	public async repoIsPubliclyAccessible(repoUrl:string): Promise<boolean> {
+
+	}
+
+	private getRequiredHeaders(): Headers {
+		const requiredHeaders = new Headers();
+		requiredHeaders.append("Accept", "application/vnd.github.v3+json");
+		return requiredHeaders;
+	}
+
+	private async sendRequest(uri:string, method:string = "GET", headers:Array<any> = []) {
+		const requiredHeaders = this.getRequiredHeaders();
+		headers.forEach(header => requiredHeaders.append(header.name, header.value));
+		const fetchReturn = await fetch(uri, {
+			method: method,
+			headers: requiredHeaders
+		});
+		return await fetchReturn.json();
+	}
+
 	/**
 	 * @param string repoUrl https://github.com/owner/repo?.git
 	 * @return string owner/repo
