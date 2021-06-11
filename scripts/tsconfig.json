@@ -8,6 +8,7 @@
     "files": [
         "View/InteractiveComponentInterface.ts",
         "View/App/Form/GitURLForm.ts",
+        "View/App/Helpers/Page/PageHelper.ts",
 		"index.ts"
     ]
 }
