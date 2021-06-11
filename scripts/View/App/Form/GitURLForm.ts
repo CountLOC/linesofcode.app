@@ -15,6 +15,7 @@ class GitURLForm implements InteractiveComponentInterface {
 			ev.preventDefault();
 			if (this.formElement.checkValidity()) {
 				this.formSubmitButton.classList.add("loading");
+				PageHelper.moveForwardOne();
 			}
 		}, false);
 		//

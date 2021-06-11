@@ -14,7 +14,7 @@ class PageHelper {
 
 	public static moveToPage(pageNumber:number): void {
 		const pages:NodeListOf<HTMLElement> = document.querySelectorAll("[data-page]");
-		const desiredPage:HTMLElement = document.querySelector(`[data-page=${pageNumber}]`);
+		const desiredPage:HTMLElement = document.querySelector(`[data-page="${pageNumber}"]`);
 		if (desiredPage == null) {
 			throw "The page with number of " + pageNumber + " does not exist";
 		}
