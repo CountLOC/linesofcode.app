@@ -1,4 +1,4 @@
-<main class="max-width" id="homePageMain">
+<main class="max-width" id="appPageMain">
 	
 	<section class="content" data-page="1">
 		
@@ -19,7 +19,7 @@
 
 	</section>
 
-	<section class="content" data-page="2">
+	<section class="content" data-page="2" hidden>
 
 		<div class="words">
 			<h1 style="margin-bottom: 5px;">Step 2</h1>

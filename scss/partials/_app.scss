@@ -1,0 +1,28 @@
+[data-page] {
+
+	transition: 150ms all;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	&[hidden] {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+}
+
+#appPageMain {
+	margin-top: 100px;
+	flex: 1;
+	position: relative;
+
+}
+
+@media all and (max-width: 950px) {
+	#appPageMain {
+		margin-top: 50px;
+	}
+}
