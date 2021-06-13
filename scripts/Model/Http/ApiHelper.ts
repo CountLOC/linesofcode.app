@@ -12,7 +12,7 @@ class ApiHelper extends HttpHelper {
 
 	constructor() {
 		super();
-		this.apiBase = "";
+		this.apiBase = document.querySelector("meta[name='api-url']").getAttribute("content");
 	}
 
 	public async getNoAuthCountReturn(repoUrl:string): Promise<CountReturn> {
