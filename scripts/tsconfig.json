@@ -7,7 +7,9 @@
     },
     "files": [
         "View/InteractiveComponentInterface.ts",
+        "Model/Http/HttpHelper.ts",
         "Model/Http/GithubHttpHelper.ts",
+        "Model/Http/ApiHelper.ts",
         "View/App/Form/GitURLForm.ts",
         "View/App/Helpers/Page/PageHelper.ts",
 		"index.ts"

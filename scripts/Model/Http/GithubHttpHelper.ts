@@ -1,15 +1,13 @@
-class GithubHttpHelper {
-
-	private apiBase:string;
+class GithubHttpHelper extends HttpHelper {
 
 	constructor() {
+		super();
 		this.apiBase = "https://api.github.com"
 	}
 
 	public async repoIsPubliclyAccessible(repoUrl:string): Promise<boolean> {
-		const githubParam = GithubHttpHelper.getOwnerAndRepo(repoUrl);
 		try {
-			await this.sendRequest(`/repos/${githubParam}`);
+			await this.sendRequest(`/repos/${GithubHttpHelper.getOwnerAndRepo(repoUrl)}`, "GET", this.getRequiredHeaders());
 			return true;
 		} catch (e) {
 			return false;
@@ -17,23 +15,13 @@ class GithubHttpHelper {
 
 	}
 
-	private async sendRequest(fullPath:string, method:string = "GET", headers:Array<any> = []) {
-		const requiredHeaders = this.getRequiredHeaders();
-		headers.forEach(header => requiredHeaders.append(header.name, header.value));
-		const fetchReturn:Response = await fetch(this.apiBase + fullPath, {
-			method: method,
-			headers: requiredHeaders
-		});
-		if (!fetchReturn.ok) {
-			throw new Error("Fetch errored with status code " + fetchReturn.status);
-		}
-		return await fetchReturn.json();
-	}
-
-	private getRequiredHeaders(): Headers {
-		const requiredHeaders = new Headers();
-		requiredHeaders.append("Accept", "application/vnd.github.v3+json");
-		return requiredHeaders;
+	private getRequiredHeaders(): Array<HeaderInterface> {
+		return [
+			{
+				name: "Accept",
+				value: "application/vnd.github.v3+json"
+			}
+		];
 	}
 
 	/**
