@@ -16,7 +16,7 @@ class PageHelper {
 		const pages:NodeListOf<HTMLElement> = document.querySelectorAll("[data-page]");
 		const desiredPage:HTMLElement = document.querySelector(`[data-page="${pageNumber}"]`);
 		if (desiredPage == null) {
-			throw "The page with number of " + pageNumber + " does not exist";
+			throw new Error("The page with number of " + pageNumber + " does not exist");
 		}
 		PageHelper.closeAllPages(pages);
 		desiredPage.removeAttribute("hidden");

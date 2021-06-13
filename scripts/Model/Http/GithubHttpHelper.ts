@@ -20,10 +20,13 @@ class GithubHttpHelper {
 	private async sendRequest(fullPath:string, method:string = "GET", headers:Array<any> = []) {
 		const requiredHeaders = this.getRequiredHeaders();
 		headers.forEach(header => requiredHeaders.append(header.name, header.value));
-		const fetchReturn = await fetch(this.apiBase + fullPath, {
+		const fetchReturn:Response = await fetch(this.apiBase + fullPath, {
 			method: method,
 			headers: requiredHeaders
 		});
+		if (!fetchReturn.ok) {
+			throw new Error("Fetch errored with status code " + fetchReturn.status);
+		}
 		return await fetchReturn.json();
 	}
 
@@ -41,7 +44,7 @@ class GithubHttpHelper {
 		const parsedUrl:URL = new URL(repoUrl);
 		const cleanPath:string = parsedUrl.pathname.slice(-1) === "/" ? parsedUrl.pathname.substring(0, -1) : parsedUrl.pathname;
 		const splitPath:Array<string> = cleanPath.split("."); // making sure we don't have a stray ".git" here at the end
-		return splitPath[0];
+		return splitPath[0].substring(1);
 
 	}
 
