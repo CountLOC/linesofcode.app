@@ -4,12 +4,14 @@ class GitURLForm implements InteractiveComponentInterface {
 	protected gitUrlInput:HTMLInputElement;
 	protected formSubmitButton:HTMLButtonElement;
 	protected githubApi:GithubHttpHelper;
+	protected appApi:ApiHelper;
 
 	constructor() {
 		this.formElement = document.querySelector("form#gitUrlForm");
 		this.gitUrlInput = document.querySelector("input#gitUrlInput");
 		this.formSubmitButton = this.formElement.querySelector("button[type=submit]");
 		this.githubApi = new GithubHttpHelper();
+		this.appApi = new ApiHelper();
 	}
 
 	init(): void {
@@ -19,7 +21,8 @@ class GitURLForm implements InteractiveComponentInterface {
 				this.formSubmitButton.classList.add("loading");
 				const repoUrl = this.gitUrlInput.value;
 				if (this.githubApi.repoIsPubliclyAccessible(repoUrl)) {
-					// go straight to counting
+					const countReturn = this.appApi.getNoAuthCountReturn(repoUrl);
+					console.log(countReturn);
 				} else {
 					PageHelper.moveForwardOne();
 				}
