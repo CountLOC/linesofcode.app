@@ -16,7 +16,7 @@ class ApiHelper extends HttpHelper {
 	}
 
 	public async getNoAuthCountReturn(repoUrl:string): Promise<CountReturn> {
-		return await this.sendRequest(`${this.apiBase}/count?repo_url=${repoUrl}`);
+		return await this.sendRequest(`/count?repo_url=${repoUrl}`);
 	}
 
 }
