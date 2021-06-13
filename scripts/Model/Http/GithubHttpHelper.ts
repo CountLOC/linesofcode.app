@@ -7,23 +7,30 @@ class GithubHttpHelper {
 	}
 
 	public async repoIsPubliclyAccessible(repoUrl:string): Promise<boolean> {
+		const githubParam = GithubHttpHelper.getOwnerAndRepo(repoUrl);
+		try {
+			await this.sendRequest(`/repos/${githubParam}`);
+			return true;
+		} catch (e) {
+			return false;
+		}
 
+	}
+
+	private async sendRequest(fullPath:string, method:string = "GET", headers:Array<any> = []) {
+		const requiredHeaders = this.getRequiredHeaders();
+		headers.forEach(header => requiredHeaders.append(header.name, header.value));
+		const fetchReturn = await fetch(this.apiBase + fullPath, {
+			method: method,
+			headers: requiredHeaders
+		});
+		return await fetchReturn.json();
 	}
 
 	private getRequiredHeaders(): Headers {
 		const requiredHeaders = new Headers();
 		requiredHeaders.append("Accept", "application/vnd.github.v3+json");
 		return requiredHeaders;
-	}
-
-	private async sendRequest(uri:string, method:string = "GET", headers:Array<any> = []) {
-		const requiredHeaders = this.getRequiredHeaders();
-		headers.forEach(header => requiredHeaders.append(header.name, header.value));
-		const fetchReturn = await fetch(uri, {
-			method: method,
-			headers: requiredHeaders
-		});
-		return await fetchReturn.json();
 	}
 
 	/**
