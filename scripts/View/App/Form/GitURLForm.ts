@@ -15,13 +15,13 @@ class GitURLForm implements InteractiveComponentInterface {
 	}
 
 	public init(): void {
-		this.formElement.addEventListener("submit", (ev) => {
+		this.formElement.addEventListener("submit", async (ev) => {
 			ev.preventDefault();
 			if (this.formElement.checkValidity()) {
 				this.formSubmitButton.classList.add("loading");
 				const repoUrl = this.gitUrlInput.value;
 				if (this.githubApi.repoIsPubliclyAccessible(repoUrl)) {
-					const countReturn = this.appApi.getNoAuthCountReturn(repoUrl);
+					const countReturn = await this.appApi.getNoAuthCountReturn(repoUrl);
 					console.log(countReturn);
 				} else {
 					PageHelper.moveForwardOne();
@@ -31,7 +31,6 @@ class GitURLForm implements InteractiveComponentInterface {
 				this.formSubmitButton.classList.remove("loading");
 			}
 		}, false);
-		//
 	}
 
 }
