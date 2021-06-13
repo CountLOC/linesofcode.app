@@ -14,7 +14,7 @@ class GitURLForm implements InteractiveComponentInterface {
 		this.appApi = new ApiHelper();
 	}
 
-	init(): void {
+	public init(): void {
 		this.formElement.addEventListener("submit", (ev) => {
 			ev.preventDefault();
 			if (this.formElement.checkValidity()) {
