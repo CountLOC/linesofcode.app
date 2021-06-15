@@ -15,7 +15,7 @@ class GitURLForm implements InteractiveComponentInterface {
 	}
 
 	public init(): void {
-		this.formElement.addEventListener("submit", async (ev) => {
+		this.formElement.addEventListener("submit", async (ev:Event) => {
 			ev.preventDefault();
 			if (this.formElement.checkValidity()) {
 				this.formSubmitButton.classList.add("loading");
