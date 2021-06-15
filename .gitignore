@@ -16,6 +16,9 @@ node_modules/
 # allowing test files
 !cypress/**/*
 
+# ignore all screenshots
+cypress/**/*.png
+
 # test file ignores
 *.mp4
 
