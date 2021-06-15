@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "target": "es5",
+        "outFile": "../../../js/oauth-consume.js",
+        "alwaysStrict": true
+    },
+    "files": [
+		"index.ts"
+    ]
+}
