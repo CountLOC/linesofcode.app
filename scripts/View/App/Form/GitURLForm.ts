@@ -6,12 +6,12 @@ class GitURLForm implements InteractiveComponentInterface {
 	protected githubApi:GithubHttpHelper;
 	protected appApi:ApiHelper;
 
-	constructor() {
+	constructor(appApi:ApiHelper) {
 		this.formElement = document.querySelector("form#gitUrlForm");
 		this.gitUrlInput = document.querySelector("input#gitUrlInput");
 		this.formSubmitButton = this.formElement.querySelector("button[type=submit]");
 		this.githubApi = new GithubHttpHelper();
-		this.appApi = new ApiHelper();
+		this.appApi = appApi;
 	}
 
 	public init(): void {
