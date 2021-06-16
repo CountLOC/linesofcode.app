@@ -7,5 +7,5 @@ window.addEventListener("DOMContentLoaded", (ev:Event) => {
 	}
 	history.pushState({}, document.title, window.location.pathname);
 	sessionStorage.setItem("code", oauthCode);
-	console.log("nav away");
+	window.location.href = "/app?status=completed";
 }, false);
