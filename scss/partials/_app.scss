@@ -21,6 +21,25 @@
 
 }
 
+.oauth-button {
+
+	height: 50px;
+	width: fit-content;
+	padding: 0 15px;
+	border-radius: 4px;
+	border: 2px solid #102A43;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	color: #102A43;
+
+	img {
+		height: 80%;
+		margin-right: 10px;
+	}
+
+}
+
 @media all and (max-width: 950px) {
 	#appPageMain {
 		margin-top: 50px;
