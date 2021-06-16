@@ -20,7 +20,8 @@ class GitURLForm implements InteractiveComponentInterface {
 			if (this.formElement.checkValidity()) {
 				this.formSubmitButton.classList.add("loading");
 				const repoUrl = this.gitUrlInput.value;
-				if (this.githubApi.repoIsPubliclyAccessible(repoUrl)) {
+				const awaitedRepoIsAccessible:boolean = await this.githubApi.repoIsPubliclyAccessible(repoUrl);
+				if (awaitedRepoIsAccessible) {
 					const countReturn = await this.appApi.getNoAuthCountReturn(repoUrl);
 					console.log(countReturn);
 				} else {
