@@ -25,6 +25,7 @@ class GitURLForm implements InteractiveComponentInterface {
 					const countReturn = await this.appApi.getNoAuthCountReturn(repoUrl);
 					console.log(countReturn);
 				} else {
+					sessionStorage.setItem("repo_url", repoUrl);
 					PageHelper.moveForwardOne();
 				}
 			} else {
