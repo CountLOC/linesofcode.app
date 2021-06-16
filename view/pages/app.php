@@ -24,7 +24,7 @@
 		<div class="words">
 			<h1 style="margin-bottom: 5px;">Step 2</h1>
 			<p>Give CountLOC temporary access to your GitHub repository</p>
-			<a href="https://github.com/login/oauth/authorize?client_id=c01abc2b579fbf2b6632&redirect_uri=http://localhost:9500/oauth-consume&scope=repo" title="Login with GitHub" class="oauth-button"><img src="/assets/github-mark.png" alt="The white on black Github icon mark" title="Login with GitHub">Login With Github</a>
+			<a href="https://github.com/login/oauth/authorize?client_id=c01abc2b579fbf2b6632&redirect_uri=<?=CURRENT_DOMAIN?>/oauth-consume&scope=repo" title="Login with GitHub" class="oauth-button"><img src="/assets/github-mark.png" alt="The white on black Github icon mark" title="Login with GitHub">Login With Github</a>
 		</div>
 
 		<div class="assets">

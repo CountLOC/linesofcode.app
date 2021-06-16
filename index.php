@@ -13,6 +13,7 @@ if (!isset($_SERVER['REQUEST_URI']) || empty($_SERVER['REQUEST_URI'])) {
 
 \define('IS_APP', $page_path === 'view/pages/app.php');
 \define('IS_DEV', (\getenv('CURRENT_ENVIRONMENT') !== 'prod' ? true : false));
+\define('CURRENT_DOMAIN', (IS_DEV ? 'http://localhost:9500' : 'https://linesofcode.app'));
 $apiBaseUrl = (IS_DEV ? 'http://localhost:9000' : 'https://api.linesofcode.app');
 if (\file_exists($page_path)) {
 	require_once 'view/includes/head.php';
