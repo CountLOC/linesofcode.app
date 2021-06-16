@@ -23,7 +23,7 @@ class GitURLForm implements InteractiveComponentInterface {
 				const awaitedRepoIsAccessible:boolean = await this.githubApi.repoIsPubliclyAccessible(repoUrl);
 				if (awaitedRepoIsAccessible) {
 					const countReturn = await this.appApi.getNoAuthCountReturn(repoUrl);
-					console.log(countReturn);
+					PageHelper.moveToPage(3);
 				} else {
 					sessionStorage.setItem("repo_url", repoUrl);
 					PageHelper.moveForwardOne();

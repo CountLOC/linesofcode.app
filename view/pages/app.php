@@ -33,6 +33,21 @@
 
 	</section>
 
+	<section class="content" data-page="3" hidden>
+
+		<div class="words">
+			<h1 style="margin-bottom: 5px;">Step 3</h1>
+			<p>That's it! Wait for CountLOC to finish loading your code, and a breakdown of how many lines and what languages will be displayed</p>
+			<!-- Progress -->
+			<!-- Code Breakdown -->
+		</div>
+
+		<div class="assets">
+			<img src="/assets/illustrations/loading.svg" alt="A woman sitting on a dial as it's loading up" title="Loading">
+		</div>
+
+	</section>
+
 </main>
 
 <script src="/js/app.js"></script>
