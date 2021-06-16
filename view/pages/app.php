@@ -38,7 +38,7 @@
 		<div class="words">
 			<h1 style="margin-bottom: 5px;">Step 3</h1>
 			<p>That's it! Wait for CountLOC to finish loading your code, and a breakdown of how many lines and what languages will be displayed</p>
-			<!-- Progress -->
+			<progress value="0" max="100">
 			<!-- Code Breakdown -->
 		</div>
 
