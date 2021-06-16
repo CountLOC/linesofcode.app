@@ -5,7 +5,8 @@ if (!isset($_SERVER['REQUEST_URI']) || empty($_SERVER['REQUEST_URI'])) {
 	if ($_SERVER['REQUEST_URI'] === '/') {
 		$page_path = 'view/pages/home.php';
 	} else {
-		$exploded_path = \explode('/', $_SERVER['REQUEST_URI']);
+		$parsed_url = parse_url($_SERVER['REQUEST_URI']);
+		$exploded_path = \explode('/', $parsed_url['path']);
 		$page_path = 'view/pages/' . ($exploded_path[\count($exploded_path) - 1] === '' ? $exploded_path[\count($exploded_path) - 2] : $exploded_path[\count($exploded_path) - 1]) . '.php';
 	}
 }
