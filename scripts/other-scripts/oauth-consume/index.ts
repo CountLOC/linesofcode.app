@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", (ev:Event) => {
 	const oauthCode:string|null = searchParams.get("code");
 	if (oauthCode == null) {
 		window.location.href = "/";
+		return;
 	}
 	sessionStorage.setItem("code", oauthCode);
 	console.log("nav away");
