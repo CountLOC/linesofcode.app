@@ -18,6 +18,8 @@ class PageHelper {
 		if (desiredPage == null) {
 			throw new Error("The page with number of " + pageNumber + " does not exist");
 		}
+		const progressBar:HTMLElement = document.getElementById("progressBar");
+		progressBar.setAttribute("data-step", pageNumber.toString());
 		PageHelper.closeAllPages(pages);
 		desiredPage.removeAttribute("hidden");
 	}
