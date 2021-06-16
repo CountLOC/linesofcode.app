@@ -1,10 +1,18 @@
 #!/bin/bash
 
+# drop css/js directories
+rm -rf css
+rm -rf js
+
 # compile css
 npm install
 mkdir css
 node_modules/.bin/node-sass --output-style compressed scss/style.scss > css/style.css
+
+# compile js
+mkdir js
 node_modules/.bin/tsc -p scripts/
+node_modules/.bin/tsc -p scripts/other-scripts/oauth-consume/
 
 # build php pages
 for f in `find view/pages -name '*.php'`
