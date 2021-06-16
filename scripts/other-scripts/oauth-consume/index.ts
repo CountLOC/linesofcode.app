@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", (ev:Event) => {
 		window.location.href = "/";
 		return;
 	}
+	history.pushState({}, document.title, window.location.pathname);
 	sessionStorage.setItem("code", oauthCode);
 	console.log("nav away");
 }, false);
