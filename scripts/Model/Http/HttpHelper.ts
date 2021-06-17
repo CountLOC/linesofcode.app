@@ -6,6 +6,7 @@ interface HeaderInterface {
 abstract class HttpHelper {
 
 	protected apiBase:string;
+	private responseHeaders:Headers;
 	
 	protected async sendRequest(fullPath:string, method:string = "GET", headers:Array<HeaderInterface> = []): Promise<any> {
 		const fetchHeaders = new Headers();
@@ -14,9 +15,15 @@ abstract class HttpHelper {
 			method: method,
 			headers: fetchHeaders
 		});
+		this.responseHeaders = fetchReturn.headers;
 		if (!fetchReturn.ok) {
 			throw new Error("Fetch errored with status code " + fetchReturn.status);
 		}
 		return await fetchReturn.json();
 	}
+
+	public getResponseHeaders(): Headers {
+		return this.responseHeaders;
+	}
+
 }
